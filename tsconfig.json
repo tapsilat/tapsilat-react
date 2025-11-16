@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["vitest/globals", "node"],
+    "noEmit": true,
+    "paths": {
+      "@/dist/*": ["./dist/*"],
+      "@/src/*": ["./src/*"]
+    }
+  },
+  "include": ["src", "tests", "examples", "vitest.setup.ts"],
+  "exclude": ["dist", "node_modules"]
+}
