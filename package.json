@@ -1,6 +1,6 @@
 {
   "name": "@tapsilat/tapsilat-react",
-  "version": "0.1.0",
+  "version": "2025.11.16",
   "description": "React provider and hooks for the @tapsilat/tapsilat-js SDK.",
   "keywords": [
     "tapsilat",
