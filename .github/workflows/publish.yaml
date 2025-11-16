@@ -9,26 +9,6 @@ permissions:
   contents: read
 
 jobs:
-  version:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Update module version
-        run: |
-          MODULE_VERSION="${{ steps.version.outputs.module_version }}"
-          perl -0pi -e "s/'version':\s*'[^']+'/'version': '$MODULE_VERSION'/g" package.json
-
-      - name: Commit version bump
-        run: |
-          MODULE_VERSION="${{ steps.version.outputs.module_version }}"
-          if git diff --quiet package.json; then
-            echo "No version change detected"
-            exit 0
-          fi
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add package.json
-          git commit -m "chore: bump module version to $MODULE_VERSION"
-          git push origin main
   publish:
     runs-on: ubuntu-latest
     needs: [version]
